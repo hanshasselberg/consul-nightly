@@ -1,0 +1,27 @@
+<html>
+<head>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.29.min.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <ul id="objects"></ul>
+
+  <script type="text/javascript">
+    AWS.config.region = 'eu-west-1';
+    var bucket = new AWS.S3({params: {Bucket: 'consul-nightly'}});
+    bucket.makeUnauthenticatedRequest('listObjects', {}, function (err, data) {
+      if (err) {
+        document.getElementById('status').innerHTML = 'Could not load objects from S3: ' + err;
+      } else {
+      console.log(data)
+        for (var i = 0; i < data.Contents.length; i++) {
+          key = data.Contents[i].Key
+          rev = key.split("/")[0]
+          arch = key.split("/")[1]
+          document.getElementById('objects').innerHTML += '<li><a href=\"https://github.com/hashicorp/consul/commit/' + rev + "\">" + rev + "</a> | " + "<a href=\"http://consul-nightly.s3-eu-west-1.amazonaws.com/" + key + "\">" + arch + '</a> ' + data.Contents[i].LastModified + '</li>';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
