@@ -39,3 +39,5 @@ function build {
 
 build "ami-0ab1117d" "linux-386"
 build "ami-f6b11181" "linux-amd64"
+
+. build_local.sh
