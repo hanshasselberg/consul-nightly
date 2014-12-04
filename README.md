@@ -1,6 +1,6 @@
 # Consul Nightly
 
-Building infrequent versions of consul for linux-386 and linux-amd64 and OSX.
+Building infrequent versions of consul for linux-386 and linux-amd64 and OSX and list them [here](http://hans.io/consul-nightly).
 
 ## Usage
 
