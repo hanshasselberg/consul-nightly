@@ -14,4 +14,4 @@ But you cannot do that because `run.sh` contains profile informations and detail
 
 ## Todo
 
-* Support more architectures!
+* Support windows?
