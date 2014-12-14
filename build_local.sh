@@ -8,7 +8,7 @@ name="darwin-amd64-osx10.8"
  
 if [[ ! -d go ]]; then
   curl -s -L http://golang.org/dl/go1.4.${name}.tar.gz -O
-  tar xvzf go1.3.3.${name}.tar.gz &> /dev/null
+  tar xvzf go1.4.${name}.tar.gz &> /dev/null
 fi
  
 export GOROOT=`pwd`/go

@@ -10,7 +10,7 @@ sudo apt-get update &> /dev/null
 sudo apt-get --assume-yes --force-yes install git build-essential python-pip libsqlite3-dev &> /dev/null
 sudo pip install awscli
 curl -L http://golang.org/dl/go1.4.$name.tar.gz -O
-tar xvzf go1.3.3.$name.tar.gz &> /dev/null
+tar xvzf go1.4.$name.tar.gz &> /dev/null
 echo "Host github.com" >> ~/.ssh/config
 echo " StrictHostKeyChecking no" >> ~/.ssh/config
  
